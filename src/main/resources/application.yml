@@ -1,0 +1,33 @@
+
+app:
+  datasource:
+    jdbc-url: jdbc:postgresql://localhost:5432/orderdb
+    username: postgres
+    password: password
+    pool-size: 30
+
+
+server:
+  port: 8011
+
+
+spring:
+  main:
+    allow-bean-definition-overriding: true
+  application:
+    name: order-client
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+order:
+  rabbitmq:
+    exchange: servicesExchange
+    routingkey: orders.*
+  eureka:
+    client:
+      serviceUrl:
+        defaultZone: http://localhost:8761/eureka
+    instance:
+      preferIpAddress: true
