@@ -25,6 +25,10 @@ public class OrderController {
         orderService.addOrder(order);
 
     }
+    @DeleteMapping(path = "{id}")
+    public void deleteOrderById( @PathVariable("id") UUID id) {
+        orderService.deleteOrderById(id);
+    }
 
 
     @PostMapping("/{id}/items")

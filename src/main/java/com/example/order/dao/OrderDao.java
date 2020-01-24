@@ -15,7 +15,7 @@ public interface OrderDao {
     }
 
     ArrayList<OrderDto>  getAllOrders();
-
+    void deleteOrderById(UUID id);
 
     OrderDto addItems(Orders order, OrderItemDto items);
 

@@ -29,14 +29,21 @@ public class OrderDaoService implements OrderDao {
 
     }
 
-    @Override
-    public void addOrder(Orders order) {
 
-    }
 
     @Override
     public ArrayList<OrderDto> getAllOrders() {
         return null;
+    }
+
+    @Override
+    public void deleteOrderById(UUID id) {
+        String deleteSql = "DELETE  FROM orderItems WHERE orderId=?";
+        jdbcTemplate.update(deleteSql,
+                id);
+        String deleteSql2 = "DELETE  FROM orders WHERE id=?";
+        jdbcTemplate.update(deleteSql2,
+                id);
     }
 
     @Override

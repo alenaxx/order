@@ -32,6 +32,9 @@ public class OrderService {
         this.orderDao = orderDao;
     }
 
+    public void deleteOrderById(UUID id){
+        orderDao.deleteOrderById(id);
+    }
     public void addOrder(Orders order) {
          orderDao.addOrder(order);
     }
